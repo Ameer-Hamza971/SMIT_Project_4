@@ -1,0 +1,393 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+html {
+    cursor: url('images/hoGaUV.png'), auto;
+}
+body {
+    overflow: hidden;
+    cursor: url('images/hoGaUV.png');
+    cursor: url("images/hoGaUV.png"), url("custom.cur"), default;
+}
+.timer {
+    visibility: hidden;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 70px;
+    height: 70px;
+    box-shadow: 2px 3px 12px #080000;
+    z-index: 1000;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-family: "agency fb";
+    color: white;
+    font-weight: 900;
+}
+.Hints {
+    width: fit-content;
+    height: fit-content;
+    visibility: hidden;
+    background: #1b1a1ad2;
+    position: absolute;
+    z-index: 1000;
+    top: 150px;
+}
+.Hints > div {
+    padding: 11px;
+    width: 40px;
+    font-size: 27px;
+    font-weight: 600;
+    color: white;
+    background: #F44336;
+    height: 40px;
+    text-align: center;
+    margin: 0px auto;
+    cursor: pointer;
+}
+.Hints > ul {
+    width: 0px;
+    height: 0px;
+    margin: 0px;
+    list-style: none;
+    overflow: hidden;
+    transition: .9s ease-in-out;
+}
+.Hints > ul li {
+    width: 200px;
+    font-size: 14px;
+    padding: 9px 0px;
+    color: white;
+    background: inherit;
+    border-bottom: 1px solid black;
+    font-weight: 800;
+    text-align: center;
+}
+.errorMsg {
+    width: 100%;
+    height: fit-content;
+    padding: 7px;
+    background: tomato;
+    color: black;
+    font-family: monospace;
+    font-size: 20px;
+    position: fixed;
+    display: none;
+    z-index: 1000;
+    text-align: center;
+}
+/* --------------------------------------------------Initial DIV--------------------------------------------- */
+div.initial {
+    width: 100%;
+    height: 100vh;
+    display: inline-block;
+    position: absolute;
+}
+.initial video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+}
+
+.overlay {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 3;
+    /* background: black; */
+}
+.overlay button {
+    padding: 20px;
+    width: 130px;
+    border-radius: 11px;
+    background: linear-gradient(45deg, #E91E63, #dad7da00);
+    font-size: 29px;
+    color: white;
+    font-weight: 700;
+    outline: none;
+    cursor: url("images/hoGaUV.png"), url("custom.cur"), default;
+    transition: 1s;
+}
+.overlay button:hover {
+    background: linear-gradient(45deg, #dad7da00, #E91E63);
+    cursor: pointer;
+}
+.overlay input {
+    width: 50%;
+    padding: 17px;
+    border-radius: 18px;
+    background: transparent;
+    outline: none;
+    border: 3px solid crimson;
+    color: crimson;
+    font-size: 20px;
+    text-align: center;
+}
+div.games ul li {
+    display: inline-block;
+    background: yellow;
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+    transition: .7s ease-in-out;
+}
+div.games ul li:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+div.games li:nth-child(1) {
+    background: #FFEB3B;
+}
+div.games li:nth-child(2) {
+    background: #00BCD4;
+}
+div.games li:nth-child(3) {
+    background: #E91E63;
+}
+div.games li:nth-child(4) {
+    background: #9C27B0;
+}
+.label {
+    display: none;
+    width: fit-content;
+    height: fit-content;
+    padding: 20px;
+    position: relative;
+    top: 40px;
+    margin: 0px auto;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-family: monospace;
+    background: yellow;
+    color: black;
+    z-index: 100;
+}
+/* ----------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------Game 1----------------------------------------- */
+div.game1 {
+    display: inline-block;
+    width: 0%;
+    height: 100vh;
+    background: #222a2d;
+    transition: 2s ease-out;
+}
+.slides div {
+    display: inline-block;
+    width: 0%;
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: #222a2d;
+    transition: .8s ease-in-out;
+}
+.slide1 p, .slide2 p, .slide3 p, .slide4 p {
+    display: inline-block;
+    width: 500px;
+    color: yellow;
+    font-family: "agency fb";
+    position: absolute;
+    position: absolute;
+    right: 5%;
+    top: 200px;
+    line-height: 2;
+    font-size: 22px;
+}
+.slide1 img, .slide2 img, .slide3 img, .slide4 img {
+    width: 400px;
+    height: 500px;
+    position: absolute;
+    top: 100px;
+    left: 10%;
+}
+
+img.arrow {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    transform: rotate(90deg);
+    left: 85%;
+    top: 60%;
+}
+.visible {
+    font-size: 24px;
+    color: turquoise;
+}
+.clue1 {
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    width: 0%;
+    overflow: hidden;
+    transition: 2s ease-in-out;
+    height: 100vh;
+    background: url('images/computer-Bg.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    transition: 2s ease-in-out;
+    left: 0px;
+}
+.clue1 > div {
+    width: 500px;
+    height: 400px;
+    background: url('images/image2.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 496px;
+    background-repeat: no-repeat;
+    background-position-y: 101px;
+    margin: 100px auto;
+}
+.pwd {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 126px;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 800;
+}
+.clue1 input {
+    padding: 5px;
+    color: black;
+    border: 1px solid black;
+}
+.clue1 button {
+    padding: 4px;
+    background: transparent;
+    color: white;
+    margin-top: 7px;
+}
+.black {
+    color: black;
+}
+#Clue1Pro {
+    visibility: hidden;
+}
+/* ----------------------------------------------------------- */
+#clue2 table {
+    margin: 200px auto;
+}
+#clue2 table td {
+    padding: 10px 30px;
+    color: white;
+    font-size: 18px;
+    font-weight: 800;
+    background: rgba(0, 0, 0, 0.6);
+}
+#clue2 table img {
+    width: 100px!important;
+    height: 150px!important;
+}
+.little {
+    font-size: 11px;
+    text-transform: capitalize;
+}
+.inputsss {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    flex-direction: row;
+    position: relative;
+    top: -100px;
+    margin: 0px auto;
+}
+.inputsss > input {
+    padding: 5px;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    outline: none;
+    margin-left: 5px;
+}
+.inputsss > input:hover {
+    color: tomato;
+    border: 2px solid tomato;
+}
+/* ---------------------------------CLUE NO 03------------------------- */
+#clue3 table {
+    margin: 150px auto;
+}
+#clue3 td {
+    width: 70px;
+    height: 70px;
+    background: tomato;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+}
+td.full {
+    width: 100%!important;
+}
+#clue3 td input {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    background: transparent;
+    font-size: 20px;
+    font-weight: 800;    
+    text-align: center;
+}
+/* ------------------------CLUE NO 05---------------------- */
+.door {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+}
+.bgimage {
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+/* ------------------------CLUE NO 08---------------------- */
+.sequences {
+    width: fit-content;
+    margin: 300px auto;
+    background: tomato;
+}
+.sequences td {
+    width: 70px;
+    height: 70px;
+    background: transparent;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
+    padding: 2px;
+    margin: 2px;
+}
+.sequences input {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: transparent;
+    font-size: 23px;
+    font-family: monospace;
+    padding: 0px;
+}
+.evenClass {
+    color: white;
+}
+.oddClass {
+    color: black;
+}

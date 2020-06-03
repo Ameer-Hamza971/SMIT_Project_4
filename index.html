@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="libs/magic-master/dist/magic.min.css">
+</head>
+
+<body>
+    <!-- ======================Sounds====================== -->
+    <div id="timer" class="timer"></div>
+    <div class="Hints" id="Hints">
+        <div class="closeBut" id="hintclose" onclick="viewHints()">
+            x
+        </div>
+        <ul class="hintsList" id="hintsList">
+
+        </ul>
+    </div>
+    <div id="error" class="errorMsg">
+
+    </div>
+    <audio src="sound/starter.mp3" type="audio/mp3" id="initial-audio"></audio>
+    <audio src="sound/slide.mp3" type="audio/mp3" id="slideSd"></audio>
+    <audio src="sound/win.mp3" type="audio/mp3" id="win"></audio>
+    <audio src="sound/pass.mp3" type="audio/mp3" id="pass"></audio>
+    <audio src="sound/ticktock.mp3" type="audio/mp3" id="tiktik" loop></audio>
+    <!-- ======================Sounds====================== -->
+    <!-- ////////////////////////////////Game1 Body///////////////////////////////// -->
+    <div class="game1" id="game1Main">
+        <div class="slides" id="slides">
+            <div id="slide1" class="slide1">
+                <img src="images/friendCharates.png" alt="">
+                <p>
+                    Your friend "Chaos" was missing from two weeks.
+                    There is no phone calls or any kind of social activity performed by him.
+                    While he lives alone so nobody take cares where he was, but as a good friend
+                    you think you must have to find him and help if he is in trouble.
+                </p>
+                <img class="arrow" src="images/Upload Icon In Red Color - 480x480.png" alt="" width="70px" height="70px"
+                    onclick="slides()">
+            </div>
+            <div class="slide2" id="slide2">
+                <img src="images/friendHouse.png" alt="">
+                <p>
+                    So you decided to visit his house.
+                    When you reach there, the door is open and everything in the house tells that
+                    there's something very bad happened.
+                </p>
+                <img class="arrow" src="images/Upload Icon In Red Color - 480x480.png" alt="" width="70px" height="70px"
+                    onclick="slides();birth()">
+            </div>
+            <div class="slide3" id="slide3">
+                <img src="images/birth.png" alt="">
+                <p id="clues">
+
+                </p>
+                <img class="arrow" src="images/Upload Icon In Red Color - 480x480.png" alt="" width="70px" height="70px"
+                    onclick="clue1()">
+            </div>
+            <div class="slide4" id="slide4">
+                <img src="images/mobile.png" alt="">
+                <p id="clues2">
+
+                </p>
+                <img class="arrow" src="images/Upload Icon In Red Color - 480x480.png" alt="" width="70px" height="70px"
+                    onclick="clue2()">
+            </div>
+            <div class="slide4" id="slide5">
+                <p id="slide5p">
+
+                </p>
+                <img class="arrow" src="images/Upload Icon In Red Color - 480x480.png" alt="" width="70px" height="70px"
+                    onclick="callerSequence()">
+            </div>
+            <div class="slide4" id="slide6">
+                <img src="images/car.png" alt="" style="width: 500px; height: 400px">
+                <p id="slide6p">
+
+                </p>
+                <img class="arrow" src="images/Upload Icon In Red Color - 480x480.png" alt="" width="70px" height="70px"
+                    onclick="inTheCar()">
+            </div>
+            <div class="slide4" id="slide7" style="background: black;">
+                <img src="images/castle.jpg" alt="">
+                <p id="slide7p">
+
+                </p>
+                <img class="arrow" src="images/Upload Icon In Red Color - 480x480.png" alt="" width="70px" height="70px"
+                    onclick="secretDoor()">
+            </div>
+            <div class="slide4" id="slide8">
+                <img src="images/water.jpg" alt="">
+                <p id="slide8p">
+
+                </p>
+                <img class="arrow" src="images/Upload Icon In Red Color - 480x480.png" alt="" width="70px" height="70px"
+                    onclick="crossBridge()">
+            </div>
+            <div class="slide4" id="slide9"
+                style="background: url('images/castle2.jpg'); background-attachment: fixed; background-size: cover;">
+                <p id="slide9p" style="left: 0px; right: 0px; margin: 0px auto; top: 400px;">
+
+                </p>
+                <img class="arrow" src="images/Upload Icon In Red Color - 480x480.png" alt="" width="70px" height="70px"
+                    onclick="clue7()">
+            </div>
+            <div class="slide4" id="slide10"
+            style="background: url('images/castle2.jpg'); background-attachment: fixed; background-size: cover;">
+            <p id="slide10p" style="left: 0px; right: 0px; margin: 0px auto; top: 400px;">
+
+            </p>
+            <img class="arrow" src="images/Upload Icon In Red Color - 480x480.png" alt="" width="70px" height="70px"
+                onclick="chairCode()">
+        </div>
+        </div>
+        <div class="clue1" id="clue1">
+            <div>
+                <!-- <img src="images/image2.png" alt=""> -->
+                <div class="pwd" id="Screen">
+                    <span>Can You guess the password</span>
+                    <input type="password" placeholder="password" id="pwd">
+                    <button onclick="passwordCheck()">Done</button>
+                </div>
+            </div>
+            <img class="arrow" src="images/Upload Icon In Red Color - 480x480.png" id="Clue1Pro" alt="" width="70px"
+                height="70px" onclick="slide4(); slide4Html()">
+        </div>
+        <div class="clue1" id="clue2">
+            <table>
+                <tr>
+                    <td>
+                        <img src="images/caretaker.png" alt="">
+                    </td>
+                    <td>
+                        <img src="images/Uncleson.png" alt="">
+                    </td>
+                    <td>
+                        <img src="images/chef.png" alt="">
+                    </td>
+                    <td>
+                        <img src="images/guard.png" alt="">
+                    </td>
+                    <td>
+                        <img src="images/neighbour.png" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>JAD
+                        <span class="little"> (caretaker) </span>
+                    </td>
+                    <td>FEG
+                        <span class="little"> (cousin) </span>
+                    </td>
+                    <td>TOM
+                        <span class="little"> (chef) </span>
+                    </td>
+                    <td>ZYU
+                        <span class="little"> (guard) </span>
+                    </td>
+                    <td>KIJ
+                        <span class="little"> (neighbour) </span>
+                    </td>
+                </tr>
+            </table>
+            <section class="inputsss">
+                <input type="text" placeholder="Write name of caller" id="callerName">
+                <input type="submit" onclick="callerCheck()">
+            </section>
+        </div>
+    </div>
+    <!-- ''''''''''''''''''''''''''''''''''''''CLUE NO 03''''''''''''''''''''''' -->
+    <div class="clue1" id="clue3">
+        <table>
+            <tr>
+                <td colspan="10" class="full">
+                    Complete the sequence
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><input type="text" class="sequence"></td>
+                <td>9</td>
+                <td><input type="text" class="sequence"></td>
+                <td>25</td>
+                <td><input type="text" class="sequence"></td>
+                <td>49</td>
+                <td><input type="text" class="sequence"></td>
+                <td>81</td>
+                <td><input type="text" class="sequence"></td>
+            </tr>
+        </table>
+        <img class="arrow" src="images/Upload Icon In Red Color - 480x480.png" id="Clue3Pro" alt="" width="70px"
+            height="70px" onclick="clue3Checker()">
+    </div>
+    <!-- ///////////////////////////CLUE NO 4///////////////////////////////////// -->
+    <div class="clue1" id="clue4" style="background-image: url('images/dashboard.jpg');">
+        <section class="inputsss" style="padding: 10px; background: rgba(0, 0, 0, 0.7); top: 250px;">
+            <input type="text" id="carcaode">
+        </section>
+        <img class="arrow" src="images/Upload Icon In Red Color - 480x480.png" id="Clue4Pro" alt="" width="70px"
+            height="70px" onclick="drive()">
+    </div>
+    <!-- ///////////////////////////CLUE NO 4///////////////////////////////////// -->
+    <div class="clue1" id="clue5">
+        <video src="videos/production ID_3999356.mp4" class="door" id="door" type="video/mp4"></video>
+
+        <section class="inputsss" style="padding: 10px; background: rgba(0, 0, 0, 0.7); top: 250px;">
+            <input type="text" id="doorcaode">
+        </section>
+        <img class="arrow" src="images/Upload Icon In Red Color - 480x480.png" id="Clue5Pro" alt="" width="70px"
+            height="70px" onclick="openSecretDoor()">
+    </div>
+    <!-- ///////////////////////////CLUE NO 5///////////////////////////////////// -->
+    <div class="clue1" id="clue6">
+        <video src="videos/Pexels Videos 2776522.mp4" class="door" id="inwater" loop type="video/mp4"></video>
+
+        <section class="inputsss" style="padding: 10px; background: rgba(0, 0, 0, 0.7); top: 250px;">
+            <input type="text" id="bridgeLength" placeholder="Length must be greater than">
+        </section>
+        <img class="arrow" src="images/Upload Icon In Red Color - 480x480.png" id="Clue5Pro" alt="" width="70px"
+            height="70px" onclick="bridgeDone()">
+    </div>
+    <!-- ///////////////////////////CLUE NO 7///////////////////////////////////// -->
+    <div class="clue1 bgimage" id="clue7" style="background-image: url(images/captive.jpg);">
+        <section class="inputsss" style="padding: 10px; background: rgba(0, 0, 0, 0.7); top: 250px;">
+            <input type="text" id="captive" placeholder="Door Number">
+        </section>
+        <img class="arrow" src="images/Upload Icon In Red Color - 480x480.png" id="Clue5Pro" alt="" width="70px"
+            height="70px" onclick="captiveDoorCheck()">
+    </div>
+    <!-- ///////////////////////////CLUE NO 8///////////////////////////////////// -->
+    <div class="clue1 bgimage" id="clue8" style="background-image: url(images/captive.jpg);">
+        <table class="sequences">
+            <tr>
+                <td colspan="10" class="full">
+                    Complete the sequence
+                </td>
+            </tr>
+            <tr>
+                <td><input type="text" class="oddClass"></td>
+                <td><input type="text" class="evenClass"></td>
+                <td><input type="text" class="oddClass"></td>
+                <td><input type="text" class="evenClass"></td>
+                <td><input type="text" class="oddClass"></td>
+                <td><input type="text" class="evenClass"></td>
+                <td><input type="text" class="oddClass"></td>
+                <td><input type="text" class="evenClass"></td>
+                <td><input type="text" class="oddClass"></td>
+                <td><input type="text" class="evenClass"></td>
+            </tr>
+        </table>
+        <img class="arrow" src="images/Upload Icon In Red Color - 480x480.png" id="Clue5Pro" alt="" width="70px"
+            height="70px" onclick="captiveDoorCheck()">
+    </div>
+    </div>
+    <!-- ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''' -->
+
+    <!-- ////////////////////////////////Game1 Body///////////////////////////////// -->
+
+    <div class="initial" id="initial">
+        <div class="label" id="g1">
+            A missing Friend!
+        </div>
+        <div class="label" id="g1"></div>
+        <div class="label" id="g1"></div>
+        <div class="label" id="g1"></div>
+        <div class="overlay" id="overlay">
+            <button onclick="playVid()">play</button>
+        </div>
+        <video id="initial-vid" src="videos/Pexels Videos 2324166.mp4"></video>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>
